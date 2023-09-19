@@ -1,0 +1,28 @@
+[{
+	"name": "splash",
+	"prompt": "This is a splash of a landing page and it describes the bottom-line-up-front purpose of the 'primary topic'. Populate the 'values' properties of this object based on the the 'primary topic'."
+},{
+	"name": "imageLeft",
+	"prompt": "This is section of the landing page describes a core value add about the 'primary topic'. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "three",
+	"prompt": "This is section of the landing page describes three features the 'primary topic' provides. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "banner",
+	"prompt": "This is section of the landing page is like a second splash page with short text that simplifies the 'primary topic'. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "youtube",
+	"prompt": "This is a youtube video that autoplays. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "imageRight",
+	"prompt": "This is section of the landing page describes a target audience the 'primary topic' helps. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "pricing",
+	"prompt": "This is section of the landing page describes the pricing options availible for 'primary topic'. The 'first' value is the free version, the 'second' price is the starter version, and the 'third' price is the enterprise version. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "formLeft",
+	"prompt": "This section is a sign-up form that asks for a user's email address. Populate the 'values' properties of this object accordingly."
+},{
+	"name": "footer",
+	"prompt": "This section is a footer that contains social media references, contact information, and copyright information. Populate the 'values' properties of this object accordingly."
+}]

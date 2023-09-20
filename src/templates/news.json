@@ -1,4 +1,4 @@
 [{
-  "name": "",
-  "prompt": ""
+  "name": "one",
+  "prompt": "This section of the landing page features recent blog posts or news articles related to the industry of the 'product'. Populate the 'values' properties of this object accordingly."
 }]

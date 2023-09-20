@@ -1,16 +1,60 @@
 const Compiler = require('../compiler')
 const compiler = new Compiler()
+const fs = require('fs').promises
+const { join } = require('path')
 
 module.exports = class Template {
-  constructor (json = []) {
+  constructor () {
+    this.layout = []
+  }
+
+  /**
+   *
+   */
+  async load (json = [], stack = []) {
     const elements = typeof json === 'string'
       ? JSON.parse(json)
       : json
 
-    this.layout = []
-
     for (const element of elements) {
-      this.add(element.name, element.prompt)
+      if (element.merge !== undefined) {
+        // Merge templates
+
+        if (stack.indexOf(element.merge) > -1) {
+          throw new RangeError('Template detected circular referencing: ' + JSON.stringify(stack))
+        }
+
+        stack.push(element.merge)
+
+        // @TODO support https files
+        const pathName = join(__dirname, element.merge + '.json')
+        const template = await this.getTemplate(pathName)
+        await this.load(template, stack)
+      } else {
+        // Add part
+        this.add(element.name, element.prompt)
+      }
+    }
+
+    return this
+  }
+
+  /**
+   *
+   */
+  async getTemplate (filePath) {
+    try {
+      // Read the file asynchronously
+      const fileContent = await fs.readFile(filePath, 'utf8')
+
+      // Parse the JSON content into a JavaScript object
+      const parsedData = JSON.parse(fileContent)
+
+      return parsedData
+    } catch (error) {
+      // Handle any errors, e.g., file not found or invalid JSON
+      console.error('Error reading or parsing the file:', error)
+      throw error // Rethrow the error if needed
     }
   }
 

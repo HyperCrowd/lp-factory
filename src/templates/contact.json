@@ -1,0 +1,4 @@
+[{
+  "name": "formLeft",
+  "prompt": "This section is a sign-up form that asks for a user's email address. Populate the 'values' properties of this object accordingly."
+}]

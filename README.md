@@ -1,5 +1,4 @@
-Langing Page Generator
+LP Factory
 ======================
 
-## Usage
-
+Templated approach to creating Landing Pages very quickly

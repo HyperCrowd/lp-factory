@@ -1,4 +1,4 @@
 [{
-  "name": "",
-  "prompt": ""
+  "name": "four",
+  "prompt": "This is section of the landing page describes four common questions people ask about the 'product'. Populate the 'values' properties of this object accordingly."
 }]

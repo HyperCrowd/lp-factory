@@ -1,4 +1,4 @@
 [{
   "name": "pricing",
-  "prompt": "This is section of the landing page describes the pricing options availible for 'primary topic'. The 'first' value is the free version, the 'second' price is the starter version, and the 'third' price is the enterprise version. Populate the 'values' properties of this object accordingly."
+  "prompt": "This is section of the landing page describes the pricing options availible for the 'product'. The 'first' value is the free version, the 'second' price is the starter version, and the 'third' price is the enterprise version. Populate the 'values' properties of this object accordingly."
 }]

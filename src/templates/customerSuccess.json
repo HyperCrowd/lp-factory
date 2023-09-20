@@ -1,4 +1,7 @@
 [{
-  "name": "",
-  "prompt": ""
+  "name": "imageLeft",
+  "prompt": "This is section of the landing page shares a real-life success story from customers of 'product'. Populate the 'values' properties of this object accordingly."
+}, {
+  "name": "imageRight",
+  "prompt": "This is section of the landing page shares a real-life success story from customers of 'product'. Populate the 'values' properties of this object accordingly."
 }]

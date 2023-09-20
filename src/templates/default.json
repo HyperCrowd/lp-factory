@@ -1,17 +1,17 @@
 [{
-	"merge": "introduction"
+	"template": "introduction"
 },{
-	"merge": "features"
+	"template": "features"
 },{
 	"name": "banner",
 	"prompt": "This is section of the landing page is like a second splash page with short text that simplifies the 'primary topic'. Populate the 'values' properties of this object accordingly."
 },{
-	"merge": "howItWorks"
+	"template": "howItWorks"
 },{
 	"name": "imageRight",
 	"prompt": "This is section of the landing page describes a target audience the 'primary topic' helps. Populate the 'values' properties of this object accordingly."
 },{
-	"merge": "pricing"
+	"template": "pricing"
 },{
-	"merge": "contact"
+	"template": "contact"
 }]

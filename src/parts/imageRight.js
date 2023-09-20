@@ -4,6 +4,7 @@ const schema = {
   image: String,
   imageAlt: String,
   imageWidth: Number,
+  clickLink: String,
   title: String,
   body: String
 }
@@ -22,6 +23,10 @@ module.exports = class RightImage extends Part {
   render () {
     const imageWidth = this.values.imageWidth || 300
 
+    const image = this.values.clickLink !== undefined
+      ? `<a href="${this.values.clickLink}" target="_blank"><img width="${imageWidth}" alt="${this.values.imageAlt}" class="pure-img-responsive" src="${this.values.image}"></a>`
+      : `<img width="${imageWidth}" alt="${this.values.imageAlt}" class="pure-img-responsive" src="${this.values.image}">`
+
     const result = `<div class="ribbon l-box-lrg pure-g" id="part-${this.id}">
       <div class="pure-u-1-24">
         <div class="l-box"></div>
@@ -31,7 +36,7 @@ module.exports = class RightImage extends Part {
         <p>${this.values.body}</p>
       </div>
       <div class="l-box-lrg is-center pure-u-1 pure-u-md-5-12 pure-u-lg-5-12">
-        <img width="${imageWidth}" alt="${this.values.imageAlt}" class="pure-img-responsive" src="${this.values.image}">
+        ${image}
       </div>
     </div>`
 

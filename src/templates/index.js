@@ -17,17 +17,17 @@ module.exports = class Template {
       : json
 
     for (const element of elements) {
-      if (element.merge !== undefined) {
+      if (element.template !== undefined) {
         // Merge templates
 
-        if (stack.indexOf(element.merge) > -1) {
+        if (stack.indexOf(element.template) > -1) {
           throw new RangeError('Template detected circular referencing: ' + JSON.stringify(stack))
         }
 
-        stack.push(element.merge)
+        stack.push(element.template)
 
         // @TODO support https files
-        const pathName = join(__dirname, element.merge + '.json')
+        const pathName = join(__dirname, element.template + '.json')
         const template = await this.getTemplate(pathName)
         await this.load(template, stack)
       } else {

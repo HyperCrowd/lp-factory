@@ -1,4 +1,4 @@
 [{
-  "name": "",
-  "prompt": ""
+  "name": "youtube",
+  "prompt": "This is a video that shows a demonsrtation of the 'product'. Populate the 'values' properties of this object accordingly."
 }]

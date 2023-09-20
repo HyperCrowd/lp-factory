@@ -1,4 +1,4 @@
 [{
   "name": "three",
-  "prompt": "This is section of the landing page describes three features the 'primary topic' provides. Populate the 'values' properties of this object accordingly."
+  "prompt": "This is section of the landing page describes three features the 'product' provides. Populate the 'values' properties of this object accordingly."
 }]

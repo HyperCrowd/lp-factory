@@ -1,3 +1,4 @@
+require('dotenv')
 const defaultTemplate = require('../src/templates/default.json')
 const Template = require('../src/templates')
 

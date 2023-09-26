@@ -31,7 +31,7 @@ module.exports = class Four extends Part {
    * Renders the part to HTML
    */
   render () {
-    const result = `<div class="information pure-g" id="part-${this.id}">
+    const result = `<div class="information pure-g four" id="part-${this.id}">
   <div class="pure-u-1 pure-u-md-1-2">
     <div class="l-box">
       <h3>${this.values.upperLeft.title}</h3>

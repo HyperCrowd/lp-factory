@@ -6,15 +6,7 @@ const schema = {
   title: String
 }
 
-let id = 0
-
 module.exports = class Youtube extends Part {
-  constructor () {
-    super(schema)
-    this.youTubeId = id
-    id += 1
-  }
-
   /**
    * Gets the schema of the part
    */
@@ -37,14 +29,14 @@ module.exports = class Youtube extends Part {
    * Renders the part to HTML
    */
   render () {
-    const result = `<div class="content" id="part-${this.id}">
+    const result = `<div class="content youtube" id="part-${this.id}">
       <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
       <div class="pure-g">
         <div id="yt-$${this.id}.youTubeId" class="is-center pure-u-1">
           <iframe
             width="720"
             height="405"
-            src="https://www.youtube.com/embed/$${this.id}.youtubeId?controls=0&amp;start=$${this.id}.start"
+            src="https://www.youtube.com/embed/$${this.id}.youtubeId?controls=0&amp;start=$${this.youTubeId}.start"
             title="$${this.id}.title"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -52,28 +44,28 @@ module.exports = class Youtube extends Part {
           ></iframe>
         </div>
       </div>
-    </div>
-    <script>
-      window.addEventListener("resize", () => {
-        const iframe = document.querySelector("#yt-$${this.id}.youTubeId iframe");
-        const iframeContainer = document.getElementById("yt-$${this.id}.youTubeId");
-        const containerWidth = iframeContainer.offsetWidth;
-        let desiredWidth = containerWidth;
-        let desiredHeight = (containerWidth / 16) * 9
+      <script>
+        window.addEventListener("resize", () => {
+          const iframe = document.querySelector("#yt-$${this.youTubeId}.youTubeId iframe");
+          const iframeContainer = document.getElementById("yt-$${this.id}.youTubeId");
+          const containerWidth = iframeContainer.offsetWidth;
+          let desiredWidth = containerWidth;
+          let desiredHeight = (containerWidth / 16) * 9
 
-        if (desiredWidth > 720) {
-          desiredWidth = 720
-        }
+          if (desiredWidth > 720) {
+            desiredWidth = 720
+          }
 
-        if (desiredHeight > 405) {
-          desiredHeight = 405
-        }
+          if (desiredHeight > 405) {
+            desiredHeight = 405
+          }
 
-        iframe.style.width = desiredWidth + 'px';
-        iframe.style.height = desiredHeight + 'px';
-        console.log({desiredHeight, desiredWidth})
-      });
-    </script>`
+          iframe.style.width = desiredWidth + 'px';
+          iframe.style.height = desiredHeight + 'px';
+          console.log({desiredHeight, desiredWidth})
+        });
+      </script>
+    </div>`
 
     return super.render(result)
   }

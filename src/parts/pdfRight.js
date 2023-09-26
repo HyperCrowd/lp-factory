@@ -18,7 +18,7 @@ module.exports = class PdfRight extends Part {
    * Renders the part to HTML
    */
   render () {
-    const result = `<div class="content" id="part-${this.id}">
+    const result = `<div class="content pdfRight" id="part-${this.id}">
       <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
       <div class="pure-g">
         <div class="l-box-lrg pure-u-1 pure-u-md-2-5">

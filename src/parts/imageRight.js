@@ -27,7 +27,7 @@ module.exports = class RightImage extends Part {
       ? `<a href="${this.values.clickLink}" target="_blank"><img width="${imageWidth}" alt="${this.values.imageAlt}" class="pure-img-responsive" src="${this.values.image}"></a>`
       : `<img width="${imageWidth}" alt="${this.values.imageAlt}" class="pure-img-responsive" src="${this.values.image}">`
 
-    const result = `<div class="ribbon l-box-lrg pure-g" id="part-${this.id}">
+    const result = `<div class="ribbon l-box-lrg pure-g imageRight" id="part-${this.id}">
       <div class="pure-u-1-24">
         <div class="l-box"></div>
       </div>

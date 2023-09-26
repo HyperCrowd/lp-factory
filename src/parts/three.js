@@ -30,7 +30,7 @@ module.exports = class Three extends Part {
    * Renders the part to HTML
    */
   render () {
-    const result = `<div class="content" id="part-${this.id}">
+    const result = `<div class="content three" id="part-${this.id}">
       <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
       <div class="pure-g">
         <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">

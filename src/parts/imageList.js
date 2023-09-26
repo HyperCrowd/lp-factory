@@ -18,7 +18,7 @@ module.exports = class ImageList extends Part {
    */
   render () {
     // @TODO
-    const result = `<div class="banner" id="part-${this.id}"></div>`
+    const result = `<div class="banner imageList" id="part-${this.id}"></div>`
 
     return super.render(result)
   }

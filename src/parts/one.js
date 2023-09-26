@@ -23,7 +23,7 @@ module.exports = class One extends Part {
       ? `<i class="fa fa-${this.values.faIcon}"></i>`
       : ''
 
-    const result = `<div class="content" id="part-${this.id}">
+    const result = `<div class="content one" id="part-${this.id}">
       <h2 class="content-head is-center">${this.values.title}</h2>
       <div class="pure-g">
         <div class="l-box pure-u-1 is-center">

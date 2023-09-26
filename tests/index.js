@@ -7,10 +7,10 @@ async function main () {
   const page = new Template()
   await page.load(defaultTemplate)
   const layout = page.getLayout()
-  console.log(layout)
 
-  // const html = page.render(layout)
-  // console.log(html)
+  // populate the layout with chatGPT then render based on it
+
+  console.log(page.render(layout))
 }
 
 main()

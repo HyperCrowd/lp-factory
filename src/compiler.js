@@ -76,11 +76,13 @@ module.exports = class Compiler {
   /**
    *
    */
-  getInstance (partName, values) {
+  getInstance (partName, id) {
     const Part = this.getPart(partName)
-    const part = new Part()
+    const part = new Part({}, id)
     const schema = part.getSchema()
-    return this.prepareInstance(schema)
+    const values = this.prepareInstance(schema)
+    part.values = values
+    return part
   }
 
   /**

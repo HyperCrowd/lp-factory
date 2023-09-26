@@ -14,7 +14,7 @@ module.exports = class FormRight extends Part {
    * Renders the part to HTML
    */
   render () {
-    const result = `<div class="content" id="part-${this.id}">
+    const result = `<div class="content formRight" id="part-${this.id}">
       ${this.values.html}
     </div>`
 

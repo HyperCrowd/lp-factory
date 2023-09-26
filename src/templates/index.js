@@ -1,7 +1,9 @@
+const { parseHash } = require('../hash')
 const Compiler = require('../compiler')
 const compiler = new Compiler()
 const fs = require('fs').promises
 const { join } = require('path')
+const Part = require('../parts')
 
 module.exports = class Template {
   constructor () {
@@ -89,11 +91,43 @@ module.exports = class Template {
       : json
 
     let result = ''
+    let id = 0
 
     for (const partData of this.layout) {
-      const part = compiler.getInstance(partData.name)
-      result += part.render()
+      const part = compiler.getInstance(partData.name, id)
+
+      console.log({
+        [id]: part.render()
+      })
+
+      id += 1
+
+      result += part.render() + '\n'
     }
+
+    result += `<script>
+window.onload = () => {
+  const flags = ${parseHash.toString()}(${JSON.stringify(json)})
+
+  const newOrder = flags.order;
+
+  if (flags.order.length === 0) {
+    return
+  }
+
+  const container = document.body; // You can replace this with the appropriate container element
+
+  newOrder.map(id => document.getElementById('part-' + id));
+
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
+  newOrder.forEach(div => {
+      container.appendChild(div);
+  })
+}
+</script>`
 
     return result
   }
